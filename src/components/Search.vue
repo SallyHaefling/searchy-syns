@@ -41,6 +41,7 @@ export default {
   color: hsl(245, 52%, 82%);
   padding: 6px;
   font-size: 16px;
+  margin-left: 500px;
 }
 
 .submit-button {
