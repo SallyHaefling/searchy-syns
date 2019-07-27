@@ -6,33 +6,38 @@
     <Search v-on:display-syn="displaySyn" />
   </div>
   </div>
+  <SynList v-bind:words='words' />
   </div>
 </template>
 
 <script>
 import Search from './components/Search'
+import SynList from './components/SynList'
 import apiKey from '../apiKey'
 
 export default {
   name: 'app',
   components: {
-    Search
+    Search,
+    SynList
   },
   data () {
     return {
       key: apiKey,
-      syns: []
+      words: [],
+      error: ''
     }
   },
   methods: {
     async displaySyn (syn) {
-      const url=`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/word?key=${apiKey}`
+      const url=`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${syn.query}?key=${apiKey}`
       try {
         const data = await fetch(url)
-        const syns = await data.json()
-        this.syns = syns.results
+        const words = await data.json()
+        this.words = words.map(w => w.meta)
+        console.log(words.map(w => w.meta))
       } catch (error) {
-        console.log(error)
+        console.log(error.message)
       }
     }
   }
