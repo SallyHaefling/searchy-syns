@@ -1,15 +1,34 @@
 <template>
-  <form class = 'search-form'>
+  <form @submit = 'searchWords' class = 'search-form'>
     <input 
-      type = 'text' 
+      type = 'text'
+      v-model = 'query' 
+      name = 'query'
       placeholder = 'Type your word to find synonyms!' class = 'search-field'>
     <button class = 'submit-button'>
       submit
     </button>
   </form>
 </template>
-
 <script>
+export default {
+  name: 'Search',
+  data () {
+    return {
+      query: '',
+      id: 1
+    }
+  },
+  methods: {
+    searchWords (event) {
+      event.preventDefault()
+      const syn = {
+        query: this.query
+      }
+      this.$emit('display-syn', syn)
+    }
+  }
+}
 </script>
 
 <style scoped>

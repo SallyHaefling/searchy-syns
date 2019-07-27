@@ -26,11 +26,11 @@ export default {
   },
   methods: {
     async displaySyn (syn) {
-      const url=`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/word?key=${apiKey}`
+      const url=`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${syn.query}?key=${apiKey}`
       try {
         const data = await fetch(url)
-        const syns = await data.json()
-        this.syns = syns.results
+        const words = await data.json()
+        console.log('words', words.map(w => w.meta))
       } catch (error) {
         console.log(error)
       }
