@@ -2,7 +2,15 @@
   <div class = 'synlist-container'>
       <div v-bind:key='word.id' v-for='word in words' class='words-syns-holder'>
         <p class = 'word'>{{ word.id }}</p>
-        <p class = 'synonyms'>Synonyms: {{ word.syns.flat() }} </p>
+        <p class = 'synonyms'>Synonyms: {{ 
+          word.syns.reduce((acc, currSyn) => {
+            if(currSyn !== ',') {
+              return currSyn.join(' ')
+            } 
+            acc += currSyn
+            return acc
+          }, '')
+           }} </p>
       </div>
     </div>
 </template>
@@ -42,6 +50,7 @@ export default {
 .synonyms {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 </style>
