@@ -1,29 +1,32 @@
-# final
+# Searchy Syns
 
-## Project setup
+## Abstract:
+
+As my final project at Turing School of Software & Design, we were given a take home challenge to create a single-page application (using the Merriam-Webster Thesaurus API) in Vue.js that allows users to find synonyms for a word they search. 
+
+## Project setup:
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Run on your server:
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Photo of project:
 
-### Run your tests
-```
-npm run test
-```
+-- COMING SOON! --
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Technologies used:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* fetch API 
+* Vue.js
+
+## Author:
+
+[Sally Haefling](https://github.com/SallyHaefling)
+
+
