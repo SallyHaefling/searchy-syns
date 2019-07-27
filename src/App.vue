@@ -6,22 +6,26 @@
     <Search v-on:display-syn="displaySyn" />
   </div>
   </div>
+  <SynList v-bind:words='words' />
   </div>
 </template>
 
 <script>
 import Search from './components/Search'
+import SynList from './components/SynList'
 import apiKey from '../apiKey'
 
 export default {
   name: 'app',
   components: {
-    Search
+    Search,
+    SynList
   },
   data () {
     return {
       key: apiKey,
-      syns: []
+      words: [],
+      error: ''
     }
   },
   methods: {
@@ -30,9 +34,10 @@ export default {
       try {
         const data = await fetch(url)
         const words = await data.json()
-        console.log('words', words.map(w => w.meta))
+        this.words = words.map(w => w.meta)
+        console.log(words.map(w => w.meta))
       } catch (error) {
-        console.log(error)
+        console.log(error.message)
       }
     }
   }
