@@ -3,7 +3,7 @@
       <div v-bind:key='word.id' v-for='word in words' class='words-syns-holder'>
         <p class = 'word'>{{ word.id }}</p>
         <p class = 'synonyms-title'>Synonyms:</p> 
-        <p class = 'synonyms-text'>
+        <p class = 'synonyms-text' v-on:click="handleClick">
         {{ 
           word.syns.reduce((acc, currSyn, index) => {
             if(currSyn !== ',') {
@@ -21,7 +21,17 @@
 <script>
 export default {
   name: 'SynList',
-  props: ['words']
+  props: ['words'],
+  data () {
+    return {
+      id: 1
+    }
+  },
+  methods: {
+    handleClick (event) {
+      console.log('event:', event.target)
+    }
+  }
 }
 </script>
 
