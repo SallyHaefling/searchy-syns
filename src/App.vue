@@ -59,7 +59,7 @@ export default {
 .title {
   font-size: 40px;
   display: flex;
-  color: hsl(241, 81%, 64%);
+  color: hsl(288, 42%, 14%);
 }
 
 .search {
