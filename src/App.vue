@@ -48,6 +48,8 @@ export default {
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -57,10 +59,13 @@ export default {
 .title {
   font-size: 40px;
   display: flex;
-  color: hsl(241, 81%, 64%);
+  color: hsl(288, 42%, 14%);
 }
 
 .search {
   padding-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>

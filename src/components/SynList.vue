@@ -2,7 +2,18 @@
   <div class = 'synlist-container'>
       <div v-bind:key='word.id' v-for='word in words' class='words-syns-holder'>
         <p class = 'word'>{{ word.id }}</p>
-        <p class = 'synonyms'>Synonyms: {{ word.syns.flat() }} </p>
+        <p class = 'synonyms-title'>Synonyms:</p> 
+        <p class = 'synonyms-text' v-on:click="handleClick">
+        {{ 
+          word.syns.reduce((acc, currSyn, index) => {
+            if(currSyn !== ',') {
+              return currSyn.join(' ')
+            } 
+            acc += currSyn
+            return acc
+          }, '')
+        }} 
+        </p>
       </div>
     </div>
 </template>
@@ -10,7 +21,17 @@
 <script>
 export default {
   name: 'SynList',
-  props: ['words']
+  props: ['words'],
+  data () {
+    return {
+      id: 1
+    }
+  },
+  methods: {
+    handleClick (event) {
+      console.log('event:', event.target)
+    }
+  }
 }
 </script>
 
@@ -20,18 +41,19 @@ export default {
   font-size: 24px;
   font-weight: bold;
   padding: 10px;
+  display: flex;
 }
 
 .synlist-container {
-  border-radius: 3px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
- 
 }
 
 .words-syns-holder {
-  background-color: hsl(254, 20%, 62%);
+  border-radius: 3px;
+  background-color: hsl(255, 17%, 65%);
+  box-shadow: 5px 5px 5px hsl(0, 3%, 14%);
   padding: 10px;
   margin: 20px;
   height: 300px;
@@ -39,9 +61,17 @@ export default {
   margin: 30px;
 }
 
-.synonyms {
-  display: flex;
-  flex-direction: column;
+.synonyms-title {
+    padding-left: 10px;
+}
+
+.synonyms-text {
+  font-style: italic;
+  padding-left: 10px;
+}
+
+.synonyms-text:hover {
+  cursor: pointer;
 }
 
 </style>

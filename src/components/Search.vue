@@ -38,9 +38,9 @@ export default {
   border: 2px solid hsl(0, 1%, 30%);
   height: 45px;
   width: 250px;
-  color: hsl(245, 52%, 82%);
   padding: 6px;
   font-size: 16px;
+  margin-left: 500px;
 }
 
 .submit-button {
