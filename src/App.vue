@@ -35,9 +35,8 @@ export default {
         const data = await fetch(url)
         const words = await data.json()
         this.words = words.map(w => w.meta)
-        console.log(words.map(w => w.meta))
       } catch (error) {
-        console.log(error.message)
+        return error.message
       }
     }
   }

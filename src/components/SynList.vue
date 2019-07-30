@@ -3,9 +3,9 @@
       <div v-bind:key='word.id' v-for='word in words' class='words-syns-holder'>
         <p class = 'word'>{{ word.id }}</p>
         <p class = 'synonyms-title'>Synonyms:</p> 
-        <p class = 'synonyms-text' v-on:click="handleClick">
+        <p class = 'synonyms-text' v-on:click='handleClick'>
         {{ 
-          word.syns.reduce((acc, currSyn, index) => {
+          word.syns.reduce((acc, currSyn) => {
             if(currSyn !== ',') {
               return currSyn.join(' ')
             } 
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     handleClick (event) {
-      console.log('event:', event.target)
+      return event.target
     }
   }
 }
