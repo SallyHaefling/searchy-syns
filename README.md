@@ -2,7 +2,7 @@
 
 ## Abstract:
 
-As my final project at Turing School of Software & Design, we were given a take home challenge to create a single-page application (using the Merriam-Webster Thesaurus API) in Vue.js that allows users to find synonyms for a word they search. 
+As my final project at Turing School of Software & Design, we were given a take home challenge to create a single-page application (using the Merriam-Webster Thesaurus API) in Vue.js that allows users to find synonyms for a word they search. This was my very first exposure to Vue.js and we were given 4 days to complete this project.
 
 ## Project setup:
 
@@ -18,7 +18,8 @@ npm run serve
 
 ## Photo of project:
 
--- COMING SOON! --
+<img width="1274" alt="Screen Shot 2019-07-30 at 11 15 22 AM" src="https://user-images.githubusercontent.com/40863560/62151060-bca47100-b2bc-11e9-9a9d-d983a8ce2c50.png">
+
 
 ## Technologies used:
 
