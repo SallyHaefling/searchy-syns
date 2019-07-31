@@ -4,6 +4,8 @@
 
 As my final project at Turing School of Software & Design, we were given a take home challenge to create a single-page application (using the Merriam-Webster Thesaurus API) in Vue.js that allows users to find synonyms for a word they search. This was my very first exposure to Vue.js and we were given instruction to complete this project without any Vue lessons and completely solo (no pairing/additional guidance).
 
+[Deployed here](https://5d41d627b20170115e197651--suspicious-johnson-2db915.netlify.com/)
+
 ## Project setup:
 
 ```
