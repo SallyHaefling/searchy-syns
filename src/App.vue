@@ -30,7 +30,8 @@ export default {
   },
   methods: {
     async displaySyn (syn) {
-      const url=`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${syn.query}?key=${apiKey}`
+      const key = process.env.VUE_APP_API_KEY
+      const url=`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${syn.query}?key=${key}`
       try {
         const data = await fetch(url)
         const words = await data.json()
