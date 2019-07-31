@@ -13,7 +13,6 @@
 <script>
 import Search from './components/Search'
 import SynList from './components/SynList'
-import apiKey from '../apiKey'
 
 export default {
   name: 'app',
@@ -23,7 +22,6 @@ export default {
   },
   data () {
     return {
-      key: apiKey,
       words: [],
       error: ''
     }

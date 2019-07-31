@@ -20,9 +20,6 @@ yarn-error.log*
 *.sln
 *.sw?
 
-
-.env
-
 # apiKey
 
 apiKey.js
