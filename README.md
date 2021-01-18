@@ -30,6 +30,6 @@ npm run serve
 
 ## Author:
 
-Sally H
+[Sally H](https://github.com/SallyH3)
 
 
